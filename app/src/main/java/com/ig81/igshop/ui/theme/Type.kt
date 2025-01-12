@@ -37,7 +37,7 @@ val Typography = Typography(
         fontWeight = FontWeight.Light, // Использует Roboto Light
         fontSize = 14.sp,
         lineHeight = 10.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.sp
     ),
     titleLarge = TextStyle(
         fontFamily = font,

@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -10,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.ig81.igshop"
         minSdk = 27
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -19,6 +22,7 @@ android {
             useSupportLibrary = true
         }
     }
+
 
     buildTypes {
         release {
@@ -50,6 +54,11 @@ android {
 }
 
 dependencies {
+    implementation(platform(libs.koin.bom))  // Подключаем BOM
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -60,6 +69,8 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
+    implementation(libs.coil.gif)
     implementation (libs.androidx.navigation.compose)
     implementation (libs.androidx.navigation.runtime.ktx)
     implementation (libs.androidx.lifecycle.viewmodel.compose)
@@ -71,4 +82,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-}
+    implementation(libs.kotlinx.serialization.json)
+   }

@@ -94,7 +94,7 @@ fun JetCircularRatingBar(modifier: Modifier = Modifier, rating: Int) {
             }
             Text(
                 text = rating.toString(),
-                color = MaterialTheme.colorScheme.surface,
+                color = Color(0xFFFFFFFF),
                 style = MaterialTheme.typography.bodyMedium
             )
         }
